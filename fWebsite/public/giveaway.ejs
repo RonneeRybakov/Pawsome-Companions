@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="giveaway.css" />
+    <title>Giveaway A Pet</title>
+    <script>
+      function displayDateTime() {
+        var currentDate = new Date();
+        var dateString = currentDate.toLocaleDateString();
+        var timeString = currentDate.toLocaleTimeString();
+        document.getElementById("dateTime").textContent =
+          "Date: " + dateString + " - Time: " + timeString;
+      }
+      window.onload = function () {
+        displayDateTime();
+      };
+      setInterval(displayDateTime, 1000);
+      function validateGiveawayForm(event) {
+        var giveawayForm = document.forms["giveawayForm"];
+
+        var animal = giveawayForm.querySelector('input[name="animal"]:checked');
+        var breed = giveawayForm["breed"].value;
+        var age = giveawayForm["animalAge"].value;
+        var gender = giveawayForm.querySelector(
+          'input[name="animalGender"]:checked'
+        );
+        var familyName = giveawayForm["familyName"].value;
+        var givenName = giveawayForm["givenName"].value;
+        var email = giveawayForm["email"].value;
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (
+          !animal ||
+          breed === "select" ||
+          age === "select" ||
+          !gender ||
+          familyName.trim() === "" ||
+          givenName.trim() === "" ||
+          !emailPattern.test(email)
+        ) {
+          alert("Please fill in all required fields in the form.");
+          return false;
+        }
+        console.log("Form validation passed");
+
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <%- include ('header') %>
+
+    <div class="content">
+      <div class="side-menu">
+        <nav>
+          <ul>
+            <li><a href="/">Home Page</a></li>
+            <li><a href="/newAccount">Create An Account</a></li>
+            <li><a href="/find">Find a Dog/Cat</a></li>
+            <li><a href="/dog_care">Dog Care</a></li>
+            <li><a href="/cat_care">Cat Care</a></li>
+            <li>
+              <a class="active" href="/giveaway">Have a Pet to Give Away</a>
+            </li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="main">
+        <h2 style="text-align: center">Have a Pet to Giveaway?</h2>
+        <form
+          name="giveawayForm"
+          onsubmit="return validateGiveawayForm(event)"
+          action="/giveaway/submit"
+          method="post"
+        >
+          <fieldset style="border-color: black; border: 5px solid">
+            <legend style="color: black; font-weight: bold">
+              Please fill out the following form:
+            </legend>
+            <input type="radio" id="option1" name="animal" value="cat" />
+            <label for="option1">Cat</label>
+            <input type="radio" id="option2" name="animal" value="dog" />
+            <label for="option2">Dog</label><br />
+            <label for="breed">Breed:</label>
+            <select id="breed" name="breed">
+              <optgroup label="Dog Breeds">
+                <option value="select">Select</option>
+                <option value="labrador">Labrador</option>
+                <option value="german_shepherd">German Shepherd</option>
+                <option value="bulldog">Bulldog</option>
+                <option value="poodle">Poodle</option>
+                <option value="beagle">Beagle</option>
+              </optgroup>
+              <optgroup label="Cat Breeds">
+                <option value="siamese">Siamese</option>
+                <option value="maine_coon">Maine Coon</option>
+                <option value="persian">Persian</option>
+                <option value="ragdoll">Ragdoll</option>
+                <option value="bengal">Bengal</option>
+              </optgroup>
+              <optgroup label="Mixed Breed">
+                <option value="mixed">Mixed Breed</option>
+              </optgroup>
+            </select>
+            <br />
+            <label for="animalAge">Age of animal:</label>
+            <select id="animalAge" name="animalAge">
+              <option value="select">Select</option>
+              <option value="Less than 1 year old">Less than 1 year old</option>
+              <option value="1-3 years old">1-3 years old</option>
+              <option value="3-5 years old">3-5 years old</option>
+              <option value="5-10 years old">5-10 years old</option>
+              <option value="Over 10 years old">Over 10 years old</option>
+              <option value="Unknown">Unknown</option>
+            </select>
+            <br />
+            <label>What is the gender of your animal?</label>
+
+            <label for="maleGender">Male</label>
+            <input
+              type="radio"
+              id="maleGender"
+              name="animalGender"
+              value="Male"
+            />
+
+            <label for="femaleGender">Female</label>
+            <input
+              type="radio"
+              id="femaleGender"
+              name="animalGender"
+              value="Female"
+            />
+
+            <label for="otherGender">Other</label>
+            <input
+              type="radio"
+              id="otherGender"
+              name="animalGender"
+              value="Other"
+            /><br />
+
+            <label>Select all that apply:</label>
+            <input
+              type="checkbox"
+              id="checkbox1"
+              name="otherDogs"
+              value="yes"
+            />
+            <label for="checkbox1">Gets along with other dogs</label><br />
+            <input
+              type="checkbox"
+              id="checkbox2"
+              name="otherCats"
+              value="yes"
+            />
+            <label for="checkbox2">Gets along with other cats</label><br />
+            <input
+              type="checkbox"
+              id="checkbox3"
+              name="smallChildren"
+              value="yes"
+            />
+            <label for="checkbox3"
+              >Suitable for a family with small children</label
+            ><br />
+            <label for="additionalInfo">Additional Information:</label><br />
+            <textarea
+              id="additionalInfo"
+              name="additionalInfo"
+              rows="4"
+              cols="50"
+            ></textarea
+            ><br />
+            <label for="familyName">Family name:</label><br />
+            <input type="text" id="familyName" name="familyName" /><br />
+            <label for="givenName">Given name:</label><br />
+            <input type="text" id="givenName" name="givenName" /><br />
+            <label for="email">Email Address:</label><br />
+            <input type="email" id="email" name="email" /><br /><br />
+            <input type="submit" />
+            <input type="reset" />
+          </fieldset>
+        </form>
+        <br />
+      </div>
+    </div>
+    <%- include ('footer') %>
+  </body>
+</html>

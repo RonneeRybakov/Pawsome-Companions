@@ -1,0 +1,30 @@
+# Pet Adoption Website
+
+## Overview
+
+This is a web application for pet adoption, where users can create accounts, log in, search for pets, and give away pets they no longer want to keep.
+
+## Prerequisites
+
+- Node.js and npm installed on your machine.
+
+## Installation
+
+1. Clone this repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Run `npm install` to install dependencies.
+
+## Usage
+
+1. Start the server by running `node index.js`.
+2. Open your web browser and navigate to `http://localhost:5005`.
+3. Follow the on-screen instructions to create an account or log in.
+4. Explore the available features such as searching for pets or giving away a pet.
+
+## Additional Information
+
+- The server runs on port 5005 by default. You can change the port in the `index.js` file if needed.
+
+## Credit for pictures:
+
+-https://www.thepioneerwoman.com/home-lifestyle/pets/g43563678/cutest-dog-breeds/ -https://www.vecteezy.com/vector-art/7301664-adopt-a-dog-help-the-homeless-animals-find-a-home-cartoon-vector-illustration -https://basepaws.com/cat-breeds/persian-cat -https://www.shutterstock.com/image-photo/himalayan-cat-funny-face-311688272

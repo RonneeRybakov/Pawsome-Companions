@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="d_care.css" />
+    <title>Cat Care</title>
+    <script>
+      function displayDateTime() {
+        var currentDate = new Date();
+        var dateString = currentDate.toLocaleDateString();
+        var timeString = currentDate.toLocaleTimeString();
+        document.getElementById("dateTime").textContent =
+          "Date: " + dateString + " - Time: " + timeString;
+      }
+      window.onload = function () {
+        displayDateTime();
+      };
+      setInterval(displayDateTime, 1000);
+    </script>
+  </head>
+  <body>
+    <%- include ('header') %>
+
+    <div class="side-menu">
+      <nav>
+        <ul>
+          <li><a href="/">Home Page</a></li>
+          <li><a href="/newAccount">Create An Account</a></li>
+          <li><a href="/find">Find a Dog/Cat</a></li>
+          <li><a href="/dog_care">Dog Care</a></li>
+          <li><a class="active" href="/cat_care">Cat Care</a></li>
+          <li><a href="/giveaway">Have a Pet to Give Away</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="main">
+      <p>
+        <em
+          >Taking care of a cat involves several important aspects to ensure
+          their health, happiness, and well-being. Here are some general
+          instructions on how to take care of a cat:</em
+        >
+      </p>
+
+      <ol>
+        <li>
+          <strong>Provide Proper Nutrition:</strong> Feed your cat a balanced
+          diet formulated for their life stage (kitten, adult, senior) and
+          health needs. Choose high-quality commercial cat food or consult with
+          your veterinarian about homemade or raw diet options.
+        </li>
+
+        <li>
+          <strong>Provide Fresh Water: </strong>Ensure your cat has access to
+          clean, fresh water at all times. Hydration is crucial for their
+          overall health and well-being.
+        </li>
+
+        <li>
+          <strong>Litter Box Maintenance:</strong> Keep the litter box clean and
+          scoop it daily to ensure your cat has a clean and comfortable place to
+          relieve themselves. Consider providing multiple litter boxes if you
+          have multiple cats.
+        </li>
+
+        <li>
+          <strong>Grooming: </strong> Depending on the breed and coat type, your
+          cat may require regular grooming. Brush your cat's coat to remove
+          loose fur and prevent mats, trim their nails as needed, and clean
+          their ears and teeth regularly.
+        </li>
+
+        <li>
+          <strong>Veterinary Care:</strong>
+          Schedule regular check-ups with a veterinarian to monitor your cat's
+          health, administer vaccinations, and address any medical concerns.
+          Keep up with preventive care such as flea and tick prevention and
+          dental check-ups.
+        </li>
+
+        <li>
+          <strong>Socialization and Training:</strong>Provide opportunities for
+          mental and physical stimulation to prevent boredom and behavioral
+          issues. Offer interactive toys, scratching posts, perches, and hiding
+          spots for your cat to explore and play.
+        </li>
+      </ol>
+      <p>
+        <em>
+          By following these general instructions and providing attentive care,
+          you can ensure a happy and healthy life for your feline friend.
+        </em>
+      </p>
+    </div>
+    <%- include('footer') %>
+  </body>
+</html>

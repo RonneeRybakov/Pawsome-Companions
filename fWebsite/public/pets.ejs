@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="pets.css" />
+    <title>Pets</title>
+    <script>
+      function displayDateTime() {
+        var currentDate = new Date();
+        var dateString = currentDate.toLocaleDateString();
+        var timeString = currentDate.toLocaleTimeString();
+        document.getElementById("dateTime").textContent =
+          "Date: " + dateString + " - Time: " + timeString;
+      }
+      window.onload = function () {
+        displayDateTime();
+      };
+      setInterval(displayDateTime, 1000);
+    </script>
+  </head>
+  <body>
+    <%- include('header') %>
+
+    <div class="side-menu">
+      <nav>
+        <ul>
+          <li><a href="/">Home Page</a></li>
+          <li><a href="/newAccount">Create An Account</a></li>
+          <li><a href="/find">Find a Dog/Cat</a></li>
+          <li><a href="/dog_care">Dog Care</a></li>
+          <li><a href="/cat_care">Cat Care</a></li>
+          <li><a href="/giveaway">Have a Pet to Give Away</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="main">
+      <h2>Available Pets for Adoption</h2>
+      <div class="pet-container">
+        <% pets.forEach(pet => { %>
+        <div class="pet">
+          <img src="<%= pet.image %>" alt="<%= pet.type %> Image" />
+          <h3><%= pet.name %></h3>
+          <p>Breed: <%= pet.breed %></p>
+          <p>Age: <%= pet.age %></p>
+          <p>Gender: <%= pet.gender %></p>
+          <p>Gets along with other dogs: <%= pet.otherDogs ? 'Yes' : 'No' %></p>
+          <p>Gets along with cats: <%= pet.otherCats ? 'Yes' : 'No' %></p>
+          <p>Good with children: <%= pet.smallChildren ? 'Yes' : 'No' %></p>
+          <!-- Additional details can be added here -->
+          <button>Interested</button>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+    <%- include('footer') %>
+  </body>
+</html>

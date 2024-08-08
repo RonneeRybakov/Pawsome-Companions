@@ -1,0 +1,8 @@
+1:buddy:cat:bulldog:5-10 years old:Male:no:no:no::Rybakov:Ronnee:rybakovronnee@gmail.com
+2:dog:german_shepherd:1-3 years old:Male:no:no:no:cute:Rybakov:Ronnee:rybakovronnee@gmail.com
+3:cat:maine_coon:3-5 years old:Male:no:no:no::Rybakov:Ronnee:rybakovronnee@gmail.com
+4:dog:german_shepherd:1-3 years old:Male:no:no:no::Rybakov:Ronnee:rybakovronnee@gmail.com
+5:dog:german_shepherd:3-5 years old:Female:no:no:no::Rybakov:Ronnee:rybakovronnee@gmail.com
+6:cat:bengal:1-3 years old:Male:no:no:no::Rybakov:Ronnee:rybakovronnee@gmail.com
+7:rondog:dog:beagle:1-3 years old:Male:no:yes:yes::Rybakov:Ronnee:rybakovronnee@gmail.com
+8:buddy:cat:persian:1-3 years old:Male:yes:no:yes:very well trained:Rybakov:Ronnee:rybakovronnee@gmail.com

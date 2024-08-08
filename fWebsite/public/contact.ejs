@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="contact.css" />
+    <title>Welcome to Adopt a Cat/Dog</title>
+    <script>
+      function displayDateTime() {
+        var currentDate = new Date();
+        var dateString = currentDate.toLocaleDateString();
+        var timeString = currentDate.toLocaleTimeString();
+        document.getElementById("dateTime").textContent =
+          "Date: " + dateString + " - Time: " + timeString;
+      }
+      window.onload = function () {
+        displayDateTime();
+      };
+      setInterval(displayDateTime, 1000);
+    </script>
+  </head>
+  <body>
+    <%- include('header'); %>
+
+    <div class="side-menu">
+      <nav>
+        <ul>
+          <li><a href="/">Home Page</a></li>
+          <li><a href="/newAccount">Create An Account</a></li>
+
+          <li><a href="/pets">Browse Available Pets</a></li>
+          <li><a href="/find">Find a Dog/Cat</a></li>
+          <li><a href="/dog_care">Dog Care</a></li>
+          <li><a href="/cat_care">Cat Care</a></li>
+          <li>
+            <a href="/giveaway">Have a Pet to Give Away</a>
+          </li>
+          <li><a class="active" href="/contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="main">
+      <h2>Contact Us</h2>
+      <p>
+        Thank you for your interest in Pawsome Companions! If you have any
+        questions, inquiries, or feedback, please feel free to reach out to us
+        using the contact information below.
+      </p>
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p><strong>Name:</strong> Ronnee Rybakov</p>
+        <p><strong>Student ID:</strong> 40281715</p>
+        <p><strong>Email:</strong> Rybakovronnee@gmail.com</p>
+      </div>
+      <div class="additional-info">
+        <h3>Additional Information</h3>
+        <p>You can also connect with us on social media:</p>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <%- include ('footer') %>
+  </body>
+</html>

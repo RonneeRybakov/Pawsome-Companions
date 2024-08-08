@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="d_care.css" />
+    <title>Dog Care</title>
+    <script>
+      function displayDateTime() {
+        var currentDate = new Date();
+        var dateString = currentDate.toLocaleDateString();
+        var timeString = currentDate.toLocaleTimeString();
+        document.getElementById("dateTime").textContent =
+          "Date: " + dateString + " - Time: " + timeString;
+      }
+      window.onload = function () {
+        displayDateTime();
+      };
+      setInterval(displayDateTime, 1000);
+    </script>
+  </head>
+  <body>
+    <%- include ('header') %>
+
+    <div class="content">
+      <div class="side-menu">
+        <nav>
+          <ul>
+            <li><a href="/">Home Page</a></li>
+            <li><a href="/newAccount">Create An Account</a></li>
+
+            <li><a href="/find">Find a Dog/Cat</a></li>
+            <li><a class="active" href="/dog_care">Dog Care</a></li>
+            <li><a href="/cat_care">Cat Care</a></li>
+            <li><a href="/giveaway">Have a Pet to Give Away</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div id="main">
+        <p>
+          <em
+            >Taking care of a dog involves several important aspects to ensure
+            their health, happiness, and well-being. Here are some general
+            instructions on how to take care of a dog:</em
+          >
+        </p>
+
+        <ol>
+          <li>
+            <strong>Provide Proper Nutrition:</strong> Feed your dog a balanced
+            diet suitable for their age, size, and breed. High-quality
+            commercial dog food is often recommended, but you can also consider
+            homemade or raw diets under the guidance of a veterinarian.
+          </li>
+          <li>
+            <strong>Provide Fresh Water: </strong>Always make sure your dog has
+            access to clean, fresh water. Hydration is essential for their
+            health and well-being.
+          </li>
+
+          <li>
+            <strong>Regular Exercise:</strong> Dogs need regular physical
+            activity to stay healthy and prevent obesity. Take your dog for
+            daily walks, play fetch, or engage in other forms of exercise based
+            on their energy level and breed requirements.
+          </li>
+
+          <li>
+            <strong>Grooming: </strong> grooming is important for your dog's
+            hygiene and appearance. This includes brushing their coat, trimming
+            nails, cleaning ears, and brushing teeth regularly.
+          </li>
+
+          <li>
+            <strong>Veterinary Care:</strong>
+            Schedule regular check-ups with a veterinarian to monitor your dog's
+            health and address any medical concerns. Keep up with vaccinations,
+            flea and tick prevention, and other preventive care recommended by
+            your vet.
+          </li>
+
+          <li>
+            <strong>Socialization and Training:</strong> Socialize your dog from
+            a young age to ensure they are comfortable around people, other
+            animals, and different environments. Basic obedience training is
+            also important for their safety and your sanity as a pet owner.
+          </li>
+        </ol>
+        <p>
+          <em>
+            By following these general instructions and providing attentive
+            care, you can help ensure a happy and fulfilling life for your
+            canine companion.</em
+          >
+        </p>
+      </div>
+    </div>
+    <div class="footer">
+      <p>
+        Privacy/Disclaimer Statement:
+        <a href="privacy_statement.html">Click here</a> to view our privacy
+        policy and disclaimer.
+      </p>
+      <p>&copy; 2024 Pawsome Companions. All rights reserved.</p>
+    </div>
+  </body>
+</html>

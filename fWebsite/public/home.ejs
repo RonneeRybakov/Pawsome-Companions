@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <title>Home</title>
+    <script>
+      function displayDateTime() {
+        var currentDate = new Date();
+        var dateString = currentDate.toLocaleDateString();
+        var timeString = currentDate.toLocaleTimeString();
+        document.getElementById("dateTime").textContent =
+          "Date: " + dateString + " - Time: " + timeString;
+      }
+      window.onload = function () {
+        displayDateTime();
+      };
+      setInterval(displayDateTime, 1000);
+    </script>
+  </head>
+  <body>
+    <%- include('header'); %>
+    <div class="content">
+      <div class="side-menu">
+        <nav>
+          <ul>
+            <li><a class="active" href="/">Home Page</a></li>
+            <li><a href="/newAccount">Create An Account</a></li>
+            <li><a href="/find">Find a Dog/Cat</a></li>
+            <li><a href="/dog_care">Dog Care</a></li>
+            <li><a href="/cat_care">Cat Care</a></li>
+            <li>
+              <a href="/giveaway">Have a Pet to Give Away</a>
+            </li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="main">
+        <h3 style="text-align: center">Welcome to Pawsome Companions!</h3>
+        Your go-to destination for finding the perfect furry companion! Our
+        website is dedicated to helping you find loving homes for cats and dogs
+        in need of adoption. Whether you're looking for a loyal canine companion
+        or a playful feline friend, we have a diverse selection of pets waiting
+        for their forever homes.<br /><br />
+        At Pawsome Companions, we understand the importance of finding the right
+        match for both you and your future pet. That's why we strive to make the
+        adoption process as seamless and enjoyable as possible. Explore our
+        website to browse available pets, learn about responsible pet care, and
+        connect with fellow animal lovers.
+        <br /><br />Join us in making a difference in the lives of these
+        deserving animals. Together, we can provide them with the love and care
+        they deserve while enriching our own lives with their companionship.
+      </div>
+    </div>
+    <%- include('footer'); %>
+  </body>
+</html>
